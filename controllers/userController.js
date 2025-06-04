@@ -27,23 +27,3 @@ const getUser = async (req, res) => {
     res.status(500).json({ error: "Server Error", details: error.message });
   }
 };
-
-const addUser = async (req, res) => {
-  try {
-    const { id, first_name, last_name, birthday, marital_status } = req.body;
-    const user = new User({
-      id,
-      first_name,
-      last_name,
-      birthday,
-      marital_status,
-    });
-
-    const newUser = await user.save();
-    res.status(201).json(newUser);
-  } catch (error) {
-    res.status(500).json({ error: "Server Error", details: error.message });
-  }
-};
-
-module.exports = { getUser, addUser };
