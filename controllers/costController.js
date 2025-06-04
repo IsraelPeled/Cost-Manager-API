@@ -23,7 +23,6 @@ const addCost = async (req, res) => {
   }
 };
 
-// GET /api/report?id=123123&year=2025&month=5
 const getMonthlyReport = async (req, res) => {
   try {
     const { id, year, month } = req.query;
