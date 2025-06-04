@@ -1,5 +1,26 @@
 const Cost = require("../models/Cost");
 
+/**
+ * POST /api/add
+ * Adds a new cost item.
+ *
+ * Body (`req.body`) must include:
+ *   - description {string}
+ *   - category {string} (one of "food","health","housing","sport","education")
+ *   - userid {number}
+ *   - sum {number}
+ *   - date {string|Date} (optional)
+ *
+ * Responses:
+ *   • 201: Returns saved cost JSON.
+ *   • 400: Missing required fields.
+ *   • 500: Database error.
+ *
+ * @async
+ * @param {import("express").Request} req
+ * @param {import("express").Response} res
+ * @returns {Promise<void>}
+ */
 const addCost = async (req, res) => {
   try {
     const { description, category, userid, sum, date } = req.body;
@@ -23,6 +44,39 @@ const addCost = async (req, res) => {
   }
 };
 
+/**
+ * GET /api/report
+ * Returns monthly cost report for a user.
+ *
+ * Query (`req.query`) must include:
+ *   - id {string|number}
+ *   - year {string|number}
+ *   - month {string|number}
+ *
+ * Success (200) returns JSON:
+ * {
+ *   userid: Number,
+ *   year: Number,
+ *   month: Number,
+ *   cost: [
+ *     { food:    [ { sum:Number, description:String, day:Number } ] },
+ *     { health:  [ { sum:Number, description:String, day:Number } ] },
+ *     { housing: [] },
+ *     { sport:   [ { sum:Number, description:String, day:Number } ] },
+ *     { education:[ { sum:Number, description:String, day:Number } ] }
+ *   ]
+ * }
+ *
+ * Responses:
+ *   • 200: Report JSON.
+ *   • 400: Missing id/year/month.
+ *   • 500: Database error.
+ *
+ * @async
+ * @param {import("express").Request} req
+ * @param {import("express").Response} res
+ * @returns {Promise<void>}
+ */
 const getMonthlyReport = async (req, res) => {
   try {
     const { id, year, month } = req.query;
