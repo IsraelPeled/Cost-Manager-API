@@ -1,5 +1,16 @@
 const mongoose = require("mongoose");
 
+/**
+ * Connects the application to MongoDB Atlas using Mongoose.
+ *
+ * Reads connection URI from process.env.MONGO_URI.
+ * On failure, logs the error and exits process.
+ *
+ * @async
+ * @function connectDB
+ * @returns {Promise<void>}
+ * @throws {Error} If unable to connect to MongoDB.
+ */
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI, {
