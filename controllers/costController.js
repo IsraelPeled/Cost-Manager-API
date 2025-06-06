@@ -12,7 +12,7 @@ const Cost = require("../models/Cost");
  *   - date {string|Date} (optional)
  *
  * Responses:
- *   • 201: Returns saved cost JSON.
+ *   • 200: Returns saved cost JSON.
  *   • 400: Missing required fields.
  *   • 500: Database error.
  *
