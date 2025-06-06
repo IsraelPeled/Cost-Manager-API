@@ -15,7 +15,7 @@ const router = express.Router();
  *   - date        {string|Date} (optional)
  *
  * Responses:
- *   • 201 Created: Returns saved cost JSON.
+ *   • 200 Created: Returns saved cost JSON.
  *   • 400 Bad Request: Missing required fields.
  *   • 500 Server Error: Database operation fails.
  *

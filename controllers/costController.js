@@ -12,7 +12,7 @@ const Cost = require("../models/Cost");
  *   - date {string|Date} (optional)
  *
  * Responses:
- *   • 201: Returns saved cost JSON.
+ *   • 200: Returns saved cost JSON.
  *   • 400: Missing required fields.
  *   • 500: Database error.
  *
@@ -58,7 +58,7 @@ const addCost = async (req, res) => {
  *   userid: Number,
  *   year: Number,
  *   month: Number,
- *   cost: [
+ *   costs: [
  *     { food:    [ { sum:Number, description:String, day:Number } ] },
  *     { health:  [ { sum:Number, description:String, day:Number } ] },
  *     { housing: [] },
