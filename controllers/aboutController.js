@@ -13,6 +13,8 @@
  * @returns {void}
  */
 exports.aboutController = (req, res) => {
-  res.json([{ first_name: "Israel", last_name: "Peled" },
-                  { first_name: "Shira",  last_name: "Shani" }]);
+  res.json([
+    { first_name: "Israel", last_name: "Peled" },
+    { first_name: "Shira", last_name: "Shani" },
+  ]);
 };

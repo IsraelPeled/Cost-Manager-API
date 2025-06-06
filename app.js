@@ -24,7 +24,9 @@ app.get("/", (req, res) => {
   res.send("Cost Manager API is working 🚀");
 });
 
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
+
+const PORT = 3000;
 
 /**
  * Starts the server and listens on the configured port.
