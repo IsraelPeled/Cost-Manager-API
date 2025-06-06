@@ -15,7 +15,7 @@ const router = express.Router();
  *   - date        {string|Date} (optional)
  *
  * Responses:
- *   • 200 Created: Returns saved cost JSON.
+ *   • 200 OK: Returns saved cost JSON.
  *   • 400 Bad Request: Missing required fields.
  *   • 500 Server Error: Database operation fails.
  *
@@ -40,7 +40,7 @@ router.post("/add", addCost);
  *   userid: Number,
  *   year:   Number,
  *   month:  Number,
- *   cost: [
+ *   costs: [
  *     { food:    [ { sum:Number, description:String, day:Number } ] },
  *     { health:  [ { sum:Number, description:String, day:Number } ] },
  *     { housing: [] },
