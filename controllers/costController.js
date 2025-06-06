@@ -58,7 +58,7 @@ const addCost = async (req, res) => {
  *   userid: Number,
  *   year: Number,
  *   month: Number,
- *   cost: [
+ *   costs: [
  *     { food:    [ { sum:Number, description:String, day:Number } ] },
  *     { health:  [ { sum:Number, description:String, day:Number } ] },
  *     { housing: [] },
@@ -113,7 +113,7 @@ const getMonthlyReport = async (req, res) => {
       userid: Number(id),
       year: Number(year),
       month: Number(month),
-      cost: Object.keys(groupedCosts).map((category) => ({
+      costs: Object.keys(groupedCosts).map((category) => ({
         [category]: groupedCosts[category],
       })),
     };
