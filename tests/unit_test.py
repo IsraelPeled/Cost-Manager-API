@@ -1,7 +1,7 @@
 import unittest
 import requests
 
-BASE_URL = "http://localhost:3000/api" 
+BASE_URL = "https://api-node-cost-manager.onrender.com/api" 
 
 line = "-------------------------------"
 
@@ -38,7 +38,7 @@ class TestCostManagerAPI(unittest.TestCase):
         params = {
             "id": "123123",
             "year": 2025,
-            "month": 2
+            "month": 5
         }
         response = requests.get(f"{BASE_URL}/report/", params=params)
         self.assertEqual(response.status_code, 200)
@@ -56,7 +56,7 @@ class TestCostManagerAPI(unittest.TestCase):
             "category": "food",
             "sum": 12,
             "year": 2025,
-            "month": 2,
+            "month": 5,
             "day": 4
         }
         response = requests.post(f"{BASE_URL}/add/", json=payload)

@@ -1,6 +1,6 @@
 import requests
 
-BASE_URL = "http://localhost:3000"  # שנה כאן אם אתה משתמש בפורט אחר
+BASE_URL = "https://api-node-cost-manager.onrender.com"  # שנה כאן אם אתה משתמש בפורט אחר
 
 line = "-------------------------------"
 
