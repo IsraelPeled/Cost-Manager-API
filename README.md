@@ -173,20 +173,13 @@ Returns the names of the team members.
 ## Python API test:
 
 ```bash
-python3 tests/test_api.py
+python tests/test_api.py
 ```
 
 ## Unit tests:
 
 ```bash
-python3 -m unittest tests/unit_test.py
-```
-
-📄 Documentation
-Generate JSDoc:
-
-```
-npm run docs
+python tests/unit_test.py
 ```
 
 # 🛠️ Technologies
