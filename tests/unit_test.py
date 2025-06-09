@@ -9,16 +9,17 @@ class TestCostManagerAPI(unittest.TestCase):
     """
     Test suite for the Cost Manager REST API.
     """
-    def test_1_about_response(self):
-    """
-    Test the /about/ endpoint.
 
-    Verifies:
-    - HTTP status code is 200.
-    - Response JSON is a list with at least two entries.
-    - First entry contains expected first_name and last_name.
-    - Second entry contains expected first_name and last_name.
-    """
+    def test_1_about_response(self):
+        """
+        Test the /about/ endpoint.
+        
+        Verifies:
+        - HTTP status code is 200.
+        - Response JSON is a list with at least two entries.
+        - First entry contains expected first_name and last_name.
+        - Second entry contains expected first_name and last_name.
+        """
         response = requests.get(f"{BASE_URL}/about/")
         self.assertEqual(response.status_code, 200)
 
@@ -66,7 +67,6 @@ class TestCostManagerAPI(unittest.TestCase):
         print("status_code =", response.status_code)
         print("response JSON =", response.json())
         print(line)
-
 
     def test_3_add_cost(self):
         """
