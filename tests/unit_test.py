@@ -58,7 +58,7 @@ class TestCostManagerAPI(unittest.TestCase):
         params = {
             "id": "123123",
             "year": 2025,
-            "month": 5
+            "month": 6
         }
         response = requests.get(f"{BASE_URL}/report/", params=params)
         self.assertEqual(response.status_code, 200)
@@ -81,7 +81,7 @@ class TestCostManagerAPI(unittest.TestCase):
             "category": "food",
             "sum": 12,
             "year": 2025,
-            "month": 5,
+            "month": 6,
             "day": 4
         }
         response = requests.post(f"{BASE_URL}/add/", json=payload)

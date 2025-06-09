@@ -69,6 +69,6 @@ def test_add_cost(user_id, description, category, amount):
 
 if __name__ == "__main__":
     test_about()
-    test_report(user_id=123123, year=2025, month=5)
+    test_report(user_id=123123, year=2025, month=6)
     test_add_cost(user_id=123123, description="milk 9", category="food", amount=8)
-    test_report(user_id=123123, year=2025, month=5)
+    test_report(user_id=123123, year=2025, month=6)
