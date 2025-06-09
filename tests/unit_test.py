@@ -6,7 +6,19 @@ BASE_URL = "https://api-node-cost-manager.onrender.com/api"
 line = "-------------------------------"
 
 class TestCostManagerAPI(unittest.TestCase):
+    """
+    Test suite for the Cost Manager REST API.
+    """
     def test_1_about_response(self):
+    """
+    Test the /about/ endpoint.
+
+    Verifies:
+    - HTTP status code is 200.
+    - Response JSON is a list with at least two entries.
+    - First entry contains expected first_name and last_name.
+    - Second entry contains expected first_name and last_name.
+    """
         response = requests.get(f"{BASE_URL}/about/")
         self.assertEqual(response.status_code, 200)
 
@@ -35,6 +47,13 @@ class TestCostManagerAPI(unittest.TestCase):
         print(line)
 
     def test_2_report(self):
+        """
+        Test the /report/ endpoint with query parameters.
+
+        Verifies:
+        - HTTP status code is 200.
+        - Response JSON is a dict.
+        """
         params = {
             "id": "123123",
             "year": 2025,
@@ -50,6 +69,12 @@ class TestCostManagerAPI(unittest.TestCase):
 
 
     def test_3_add_cost(self):
+        """
+        Test the /add/ endpoint for creating a new cost entry.
+
+        Verifies:
+        - HTTP status code is either 200 or 201.
+        """
         payload = {
             "userid": "123123",
             "description": "milk",
@@ -67,6 +92,15 @@ class TestCostManagerAPI(unittest.TestCase):
         print(line)
 
     def test_4_get_user(self):
+        """
+        Test the /users/{user_id} endpoint.
+
+        Verifies:
+        - HTTP status code is 200.
+        - Response JSON contains first_name, last_name, id, and total.
+        - The id field matches the requested user_id.
+        - The total field is numeric.
+        """
         userid = 123123
         response = requests.get(f"{BASE_URL}/users/{userid}")
         
