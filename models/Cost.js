@@ -1,3 +1,8 @@
+/**
+ * @module models/Cost
+ * @description Mongoose model for tracking individual cost entries.
+ */
+
 const mongoose = require("mongoose");
 
 /**

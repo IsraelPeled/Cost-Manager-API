@@ -1,4 +1,12 @@
 /**
+ * @module controllers/aboutController
+ * @description Controller for the GET /api/about endpoint.
+ *              Returns a JSON array of team members’ first and last names.
+ */
+
+const express = require('express');
+
+/**
  * GET /api/about
  * Returns a JSON array of team members’ first and last names.
  *
@@ -8,8 +16,8 @@
  * ]
  *
  * @function aboutController
- * @param {import("express").Request} req  - Express request object.
- * @param {import("express").Response} res - Express response object; sends JSON array.
+ * @param {express.Request} req  - Express request object.
+ * @param {express.Response} res - Express response object; sends JSON array.
  * @returns {void}
  */
 exports.aboutController = (req, res) => {

@@ -1,3 +1,10 @@
+/**
+ * @module controllers/userController
+ * @description Controller for the GET /api/users/:id endpoint.
+ *              Retrieves a single user’s details and computes their total cost.
+ */
+
+const express = require('express');
 const User = require("../models/User");
 const Cost = require("../models/Cost");
 
@@ -6,8 +13,8 @@ const Cost = require("../models/Cost");
  *
  * @async
  * @function getUser
- * @param {import("express").Request} req - Express request object; expects req.params.id to be the user ID (string or number).
- * @param {import("express").Response} res - Express response object; returns JSON object:
+ * @param {express.Request} req - Express request object; expects req.params.id to be the user ID (string or number).
+ * @param {express.Response} res - Express response object; returns JSON object:
  *    {
  *      first_name: string,
  *      last_name: string,
