@@ -1,3 +1,8 @@
+/**
+ * @module db
+ * @description Database connection setup using Mongoose.
+ */
+
 const mongoose = require("mongoose");
 
 /**

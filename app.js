@@ -1,3 +1,10 @@
+/**
+ * @module app
+ * @description
+ * Main application entry point for the Cost Manager API.
+ * Sets up Express, connects to MongoDB, mounts routers, and starts the server.
+ */
+
 const express = require("express");
 const connectDB = require("./config/db");
 
@@ -16,8 +23,8 @@ app.use("/api", require("./routes/users"));
  * GET /
  * Simple health-check endpoint that returns plain text.
  *
- * @param {import("express").Request} req  - Express request object.
- * @param {import("express").Response} res - Express response object; sends text.
+ * @param {express.Request} req  - Express request object.
+ * @param {express.Response} res - Express response object; sends text.
  * @returns {void}
  */
 app.get("/", (req, res) => {

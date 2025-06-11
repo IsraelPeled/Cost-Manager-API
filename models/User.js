@@ -1,3 +1,8 @@
+/**
+ * @module models/User
+ * @description Mongoose model for the User collection.
+ */
+
 const mongoose = require("mongoose");
 
 /**

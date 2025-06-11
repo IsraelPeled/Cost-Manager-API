@@ -12,7 +12,9 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs": "jsdoc -c jsdoc.json"
+    "docs": "jsdoc -r controllers models routes config app.js -d docs/jsdoc",
+    "docs:md": "jsdoc2md app.js controllers/**/*.js models/**/*.js routes/**/*.js config/**/*.js > docs/API.md"
+
   },
   "keywords": [],
   "author": "",
@@ -20,7 +22,15 @@
   "description": "",
   "devDependencies": {
     "jsdoc": "^4.0.4",
+    "jsdoc-plugin-typescript": "^3.2.0",
+    "jsdoc-to-markdown": "^9.1.1",
     "nodemon": "^3.1.10",
     "taffydb": "^2.7.3"
+  },
+  "plugins": [
+    "node_modules/jsdoc-plugin-typescript"
+  ],
+  "opts": {
+    "destination": "docs/jsdoc"
   }
 }

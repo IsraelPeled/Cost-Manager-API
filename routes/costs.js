@@ -1,5 +1,15 @@
+/**
+ * @module routes/costs
+ * @description Express router for cost-related API endpoints.
+ */
+
 const express = require("express");
 const { addCost, getMonthlyReport } = require("../controllers/costController");
+
+/**
+ * Express Router for `/api/add` and `/api/report`.
+ * @type {express.Router}
+ */
 const router = express.Router();
 
 /**
@@ -19,8 +29,8 @@ const router = express.Router();
  *   • 400 Bad Request: Missing required fields.
  *   • 500 Server Error: Database operation fails.
  *
- * @param {import("express").Request} req  - Express request object (with `req.body`).
- * @param {import("express").Response} res - Express response object.
+ * @param {express.Request} req  - Express request object (with `req.body`).
+ * @param {express.Response} res - Express response object.
  * @returns {Promise<void>}
  */
 router.post("/add", addCost);
@@ -54,8 +64,8 @@ router.post("/add", addCost);
  *   • 400 Bad Request: Missing id/year/month.
  *   • 500 Server Error: Database query fails.
  *
- * @param {import("express").Request} req  - Express request object (with `req.query`).
- * @param {import("express").Response} res - Express response object.
+ * @param {express.Request} req  - Express request object (with `req.query`).
+ * @param {express.Response} res - Express response object.
  * @returns {Promise<void>}
  */
 router.get("/report", getMonthlyReport);

@@ -1,4 +1,10 @@
+/**
+ * @module controllers/costController
+ * @description Controller functions for handling cost-related API endpoints.
+ */
+
 const Cost = require("../models/Cost");
+const express = require('express');
 
 /**
  * POST /api/add
@@ -17,8 +23,8 @@ const Cost = require("../models/Cost");
  *   • 500: Database error.
  *
  * @async
- * @param {import("express").Request} req
- * @param {import("express").Response} res
+ * @param {express.Request} req
+ * @param {express.Response} res
  * @returns {Promise<void>}
  */
 const addCost = async (req, res) => {
@@ -73,8 +79,8 @@ const addCost = async (req, res) => {
  *   • 500: Database error.
  *
  * @async
- * @param {import("express").Request} req
- * @param {import("express").Response} res
+ * @param {express.Request} req
+ * @param {express.Response} res
  * @returns {Promise<void>}
  */
 const getMonthlyReport = async (req, res) => {
